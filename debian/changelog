@@ -1,3 +1,10 @@
+gnome-packagekit (3.14.0-1scibian1) jessie; urgency=low
+
+  * Add 'logitheque' keyword
+  * Warn user with a pop-up when a package failed to install
+
+ -- Scibian Packaging Team <packaging@scibian.org>  Mon, 05 Sep 2016 15:49:06 +0200
+
 gnome-packagekit (3.14.0-1) unstable; urgency=medium
 
   * New upstream release: 3.14.0 (Closes: #763860)
