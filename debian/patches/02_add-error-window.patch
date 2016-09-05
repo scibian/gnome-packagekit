@@ -1,0 +1,14 @@
+Description: Warn user with a pop-up when a package failed to install
+Author: Scibian Packaging Team <packaging@scibian.org>
+
+--- a/src/gpk-application.c
++++ b/src/gpk-application.c
+@@ -1865,6 +1865,8 @@
+ 	results = pk_task_generic_finish (task, res, &error);
+ 	if (results == NULL) {
+ 		g_warning ("failed to install packages: %s", error->message);
++		window = GTK_WINDOW (gtk_builder_get_object (priv->builder, "window_manager"));
++		gpk_error_dialog_modal (window, "Failed to install package", "An error occurred while processing your request", error->message);
+ 		g_error_free (error);
+ 		goto out;
+ 	}
